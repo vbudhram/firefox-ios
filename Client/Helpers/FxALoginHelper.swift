@@ -129,7 +129,9 @@ class FxALoginHelper {
         }
         accountVerified = data["verified"].bool ?? false
         self.account = account
-        requestUserNotifications(application)
+        
+        readyForSyncing()
+//        requestUserNotifications(application)
     }
 
     fileprivate func requestUserNotifications(_ application: UIApplication) {
@@ -208,7 +210,8 @@ class FxALoginHelper {
 
         if AppConstants.MOZ_FXA_PUSH {
             DispatchQueue.main.async {
-                application.registerForRemoteNotifications()
+                
+//                application.registerForRemoteNotifications()
             }
         } else {
             readyForSyncing()

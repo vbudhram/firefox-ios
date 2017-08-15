@@ -4910,7 +4910,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B61CD631F2A769D00D38DE1 /* pocketglobalfeed.json in Resources */,
-				D38A1BF11A9FA2CA00F6A386 /* SiteTableViewControllerHeader.xib in Resources */,
 				A83E5B1A1C1DA8BF0026D912 /* image.gif in Resources */,
 				A83E5B1B1C1DA8BF0026D912 /* image.png in Resources */,
 			);
@@ -8856,7 +8855,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC";
+				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
