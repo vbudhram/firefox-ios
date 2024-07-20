@@ -16,6 +16,9 @@ const fieldTemplates = {
       name: item.fieldId,
       required: item.required,
       value: item.value ?? "",
+      // Conditionally add pattern attribute since pattern=""/false/undefined
+      // results in weird behaviour.
+      ...(item.pattern && { pattern: item.pattern }),
     };
   },
   input(item) {
@@ -102,11 +105,10 @@ function* convertLayoutToUI(fields, l10nStrings) {
 
     const label = createElement("label", fieldUI.label);
     const { tag, ...rest } = fieldUI.field;
-    const field = createElement(tag, rest);
-    label.appendChild(field);
     const span = createElement("span", fieldUI.span);
     label.appendChild(span);
-
+    const field = createElement(tag, rest);
+    label.appendChild(field);
     yield label;
   }
 }
